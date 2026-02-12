@@ -14,5 +14,7 @@
             "email": "lzwanziger@viosys.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^13.0"
+    }
 }
