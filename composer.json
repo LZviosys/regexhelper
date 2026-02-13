@@ -8,7 +8,10 @@
             "Lz\\Regexhelper\\": "src/"
         }
     },
-    "authors": [
+  "require": {
+    "php": ">=8.0"
+  },
+  "authors": [
         {
             "name": "lzwanziger",
             "email": "lzwanziger@viosys.com"

@@ -33,6 +33,33 @@ class RegexHelper
        return self::getPasswordsErrors($password) === '';
     }
 
+    public static function maskPhoneNumber(string $string): string
+    {
+        $pattern = '/(\+?[0-9\(\)\-\s]{8,})/';
+
+        return preg_replace_callback($pattern, static function ($matches) {
+            return preg_replace('/\d/', '*', $matches[0]);
+        }, $string);
+    }
+
+    public static function maskIBAN(string $iban): string
+    {
+        $cleanIban = str_replace(' ', '', $iban);
+        $length = strlen($cleanIban);
+
+        if ($length < 15) {
+            return $iban;
+        }
+
+        $start = substr($cleanIban, 0, 4);
+        $end = substr($cleanIban, -4);
+
+        $middleMaskedIban = str_repeat('*', $length - 8);
+        $fullMaskedIban = $start . $middleMaskedIban . $end;
+
+        return trim(chunk_split($fullMaskedIban, 4, ' '));
+    }
+
     public static function getPasswordsErrors( string $password): string {
         $message = [];
 
