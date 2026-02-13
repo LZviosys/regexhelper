@@ -1,8 +1,8 @@
 # RegexHelper
 
-Ein PHP-Paket zum Testen von RegEx-Mustern. 
+Ein PHP-Paket zum Testen von Daten mit Regex. 
 Es können Strings, Emails, Dateinamen, URLs auf Gueltigkeit geprüft werden.
-IBAN´s udn Telefonnummern können maskiert werden.
+IBAN´s und Telefonnummern können maskiert werden.
 Passwörter können auf Sicherheit geprueft werden.
 
 
